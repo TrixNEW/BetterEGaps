@@ -39,7 +39,7 @@ class Main extends PluginBase implements Listener
     }
 
     private function removeAbsorptionEffectAfterDelay(Player $player, int $delay): void {
-        Main::getInstance()->getScheduler()->scheduleDelayedTask(new ClosureTask(function () use ($player): void {
+       $this->getScheduler()->scheduleDelayedTask(new ClosureTask(function () use ($player): void {
             $player->getEffects()->remove(VanillaEffects::ABSORPTION());
         }), 20 * $delay);
     }
