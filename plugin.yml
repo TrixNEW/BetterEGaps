@@ -1,0 +1,7 @@
+---
+name: BetterEGaps
+version: 1.0.0
+main: Trix\Egaps\Main
+api: 5.13.0
+author: Trix
+...
