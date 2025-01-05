@@ -10,17 +10,21 @@ use pocketmine\event\player\PlayerItemConsumeEvent;
 use pocketmine\item\ItemTypeIds;
 use pocketmine\player\Player;
 use pocketmine\scheduler\ClosureTask;
+use pocketmine\entity\effect\EffectInstance;
 
 class Main extends PluginBase implements Listener
 {
+    private int $absorptionRemovalDelay;
+    private int $resistanceLevel;
+    private int $resistanceDuration;
 
     public function onEnable(): void
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
-        $this->absorptionRemovalDelay = $this->getConfig()->get('absorption-removal-delay');
-        $this->resistanceLevel = $this->getConfig()->get('resistance-level');
-        $this->resistanceDuration = $this->getConfig()->get('resistance-duration');
+        $this->absorptionRemovalDelay = $this->getConfig()->get('absorption-removal-delay', 5);
+        $this->resistanceLevel = $this->getConfig()->get('resistance-level', 1);
+        $this->resistanceDuration = $this->getConfig()->get('resistance-duration', 10);
 
     }
   
