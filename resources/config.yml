@@ -1,0 +1,9 @@
+
+# Time (in seconds) after gapping, to remove the absorption hearts
+absorption-removal-delay: 3
+
+# Accurate level of resistance to get when gapping (already accounts for pocketmine effect level starting at 0)
+resistance-level: 5
+
+# Time (in seconds) of how long to give the resistance effect to the player
+resistance-duration: 30
